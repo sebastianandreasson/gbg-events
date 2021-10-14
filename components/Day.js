@@ -4,7 +4,6 @@ import styled from 'styled-components'
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  color: #363447;
   ${({ isToday }) => isToday && `color: #DD4829;`}
   ${({ isPreviousMonth }) => isPreviousMonth && `opacity: 0.4;`}
 
@@ -30,7 +29,6 @@ const Day = ({ date, month }) => {
   const isPreviousMonth = !moment(month)
     .startOf('month')
     .isSame(moment(date).startOf('month'))
-
   const isInFuture = date.isAfter(moment())
 
   if (isPreviousMonth && isInFuture) return <div></div>
