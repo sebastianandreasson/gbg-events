@@ -22,9 +22,12 @@ export const getDateGrid = () => {
 
   return [
     createMonth(today),
-    createMonth(moment(today).add(1, 'month').startOf('month')),
-    createMonth(moment(today).add(2, 'month').startOf('month')),
-    createMonth(moment(today).add(3, 'month').startOf('month')),
-    createMonth(moment(today).add(4, 'month').startOf('month')),
+    ...Array.from({ length: 12 }).map((_, i) =>
+      createMonth(
+        moment(today)
+          .add(i + 1, 'month')
+          .startOf('month')
+      )
+    ),
   ]
 }
