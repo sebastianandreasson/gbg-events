@@ -17,7 +17,7 @@ const Month = ({ month, days }) => {
       <h1>{month.format('MMMM YYYY')}</h1>
       <div>
         {days.map((d, i) => (
-          <Day {...d} key={`Day_${i}`} />
+          <Day {...d} month={month} key={`Day_${i}`} />
         ))}
       </div>
     </Container>

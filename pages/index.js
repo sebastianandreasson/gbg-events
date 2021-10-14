@@ -13,7 +13,9 @@ function HomePage() {
 
   return (
     <Container>
-      <Month {...dateGrid[0]} />
+      {dateGrid.map((d, i) => (
+        <Month {...d} key={`Month_${i}`} />
+      ))}
     </Container>
   )
 }
