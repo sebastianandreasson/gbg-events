@@ -1,5 +1,5 @@
-import moment from 'moment'
 import styled from 'styled-components'
+import Logo from '../components/Logo'
 import Month from '../components/Month'
 import { getDateGrid } from '../utils'
 
@@ -13,6 +13,7 @@ function HomePage() {
 
   return (
     <Container>
+      <Logo />
       {dateGrid.map((d, i) => (
         <Month {...d} key={`Month_${i}`} />
       ))}
